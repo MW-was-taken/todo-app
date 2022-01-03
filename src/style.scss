@@ -1,0 +1,96 @@
+// module imports
+@use "var" as v;
+@use "colors" as c;
+
+/* automatically set margin and padding to 0
+this is useful because most browsers come with elements that have predefined
+padding or margin and most times you dont want this. */
+* {
+	margin: 0;
+	padding: 0;
+}
+// set the font family and body background color
+body {
+	background: c.$dark;
+	font-family: v.$font;
+}
+// mixin for customizeable font sizes + weight to reduce redundancies
+@mixin font($font-size, $font-weight) {
+	font-size: $font-size;
+	font-weight: $font-weight;
+}
+@mixin color($opacity) {
+	color: #ffffff;
+	opacity: $opacity;
+}
+// typography
+// use the font mixin to create some flexible elements
+h1 {
+	@include font(40px, bold);
+}
+h2 {
+	@include font(30px, 600);
+}
+h3 {
+	@include font(25px, 500);
+}
+h4 {
+	@include font(20px, 400);
+}
+h5 {
+	@include font(15px, 400);
+}
+p,
+a {
+	@include font(10px, 300);
+}
+// use color mixin to make emphasis text
+.high-emphasis {
+	@include color(87%);
+}
+.med-emphasis {
+	@include color(60%);
+}
+.disabled {
+	@include color(38%);
+}
+// ui elements
+.card {
+	padding: 16px;
+	background: c.$dark-surface;
+	border-radius: 15px;
+	margin-bottom: 15px;
+}
+input[type="text"] {
+	padding: 10px 15px;
+	font-size: 20px;
+	width: 100%;
+	color: darken(#ffffff, 13%);
+	background: c.$dark;
+	border: none;
+	border-radius: 15px;
+	margin: 5px 0;
+}
+// misc elements
+.img-round {
+	// nice round image!
+	border-radius: 50px;
+}
+// TODO: fix this hacky profile image width
+img {
+	height: 57px;
+}
+// container class to keep content away from ends of page
+.container {
+	max-width: 800px;
+	margin: auto;
+	// margin to stop ui elements
+	.page-container {
+		margin: 15px;
+	}
+}
+// simple flex utility
+.flex {
+	display: flex;
+	justify-content: space-between;
+}
