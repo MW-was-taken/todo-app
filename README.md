@@ -6,8 +6,8 @@ HTML, Javascript, and Sass project
 
 ## Roadmap
 
-| Item         | Status      |
-| ------------ | ----------- |
-| Stylesheet   | In Progress |
-| Javascript   | To Do       |
-| App Template | To Do       |
+| Item         | Status    |
+| ------------ | --------- |
+| Stylesheet   | Completed |
+| Javascript   | Completed |
+| App Template | Completed |
