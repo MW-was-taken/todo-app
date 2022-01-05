@@ -14,14 +14,23 @@ body {
 	background: c.$dark;
 	font-family: v.$font;
 }
+// buttons aren't affected when font-family is used on the body for some reason
+button {
+	font-family: v.$font;
+}
 // mixin for customizeable font sizes + weight to reduce redundancies
 @mixin font($font-size, $font-weight) {
 	font-size: $font-size;
 	font-weight: $font-weight;
+	text-shadow: 1px 1px 0px #263666;
 }
 @mixin color($opacity) {
 	color: #ffffff;
 	opacity: $opacity;
+}
+@mixin boxShadow() {
+	-webkit-box-shadow: v.$box-shadow;
+	box-shadow: v.$box-shadow;
 }
 // typography
 // use the font mixin to create some flexible elements
@@ -60,6 +69,7 @@ a {
 	background: c.$dark-surface;
 	border-radius: 15px;
 	margin-bottom: 15px;
+	@include boxShadow();
 }
 input[type="text"] {
 	padding: 10px 15px;
@@ -70,6 +80,21 @@ input[type="text"] {
 	border: none;
 	border-radius: 15px;
 	margin: 5px 0;
+	text-shadow: 1px 1px 0px #263666;
+}
+button {
+	background: c.$dark-button;
+	color: darken(#ffffff, 13%);
+	padding: 10px 20px;
+	border-radius: 15px;
+	border: none;
+	padding: 0.375rem 0.75rem;
+	line-height: 1.5;
+	border-radius: 0.25rem;
+	font-size: 15px;
+	&:hover {
+		background: darken($color: c.$dark-button, $amount: 15);
+	}
 }
 // misc elements
 .img-round {
@@ -79,6 +104,7 @@ input[type="text"] {
 // TODO: fix this hacky profile image width
 img {
 	height: 57px;
+	cursor: pointer;
 }
 // container class to keep content away from ends of page
 .container {

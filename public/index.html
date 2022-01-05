@@ -26,6 +26,7 @@
 								src="img/profile.png"
 								alt="Profile Image"
 								class="img-round"
+								onclick="window.location.href = 'https://github.com/iwannaplayminicraft/todo-app'"
 							/>
 						</div>
 					</div>
@@ -37,9 +38,25 @@
 					<div class="med-emphasis">
 						<h4>Task Title</h4>
 					</div>
-					<input type="text" name="task-title" />
+					<input type="text" id="task-title" />
+					<button onclick="append()">
+						Submit Task
+					</button>
+					<button onclick="clearList()">
+						Clear List
+					</button>
+				</div>
+				<div class="card">
+					<div class="high-emphasis">
+						<h2>Tasks</h2>
+						<div id="tasks">
+
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
+
+		<script src="./js/append.js"></script>
 	</body>
 </html>
