@@ -94,6 +94,7 @@ button {
 	font-size: 15px;
 	&:hover {
 		background: darken($color: c.$dark-button, $amount: 15);
+		cursor: pointer;
 	}
 }
 // misc elements
